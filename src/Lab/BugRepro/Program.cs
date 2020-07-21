@@ -13,7 +13,6 @@ namespace BugRepro
 
             window.Initialize();
 
-            var fgc = false;
             var input = window.CreateInput();
 
             while (true)
@@ -22,12 +21,6 @@ namespace BugRepro
 
                 if (window.IsClosing)
                     break;
-
-                if (!fgc)
-                {
-                    GC.Collect();
-                    fgc = true;
-                }
 
                 window.DoUpdate();
                 window.DoRender();
